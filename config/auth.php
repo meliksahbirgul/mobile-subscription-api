@@ -36,6 +36,10 @@ return [
     */
 
     'guards' => [
+        'device' => [
+            'driver' => 'sanctum',
+            'provider' => 'devices',
+        ],
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -60,6 +64,10 @@ return [
     */
 
     'providers' => [
+        'devices' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Devices::class,
+        ],
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
