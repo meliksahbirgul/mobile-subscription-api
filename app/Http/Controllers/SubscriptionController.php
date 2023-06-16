@@ -26,7 +26,7 @@ class SubscriptionController extends Controller
 
         $device = $request->user();
 
-        $status = $this->subscribeService->checkReceipt($request->receipt);
+        $status = $this->subscribeService->checkReceipt($device, $request->receipt);
 
         $expire_date = $this->subscribeService->saveSubscription($device, $status, $request->receipt);
 
